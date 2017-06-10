@@ -1,0 +1,59 @@
+{
+  "name": "agendaJobs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "name":{
+      "type": "string"
+    },
+    "data":{
+      "type": "object"
+    },
+    "type":{
+      "type": "string"
+    },
+    "priority":{
+      "type": "number"
+    },
+    "nextRunAt":{
+      "type": "date"
+    },
+    "lastModifiedBy":{
+      "type": "date"
+    },
+    "lockedAt":{
+      "type": "date"
+    },
+    "lastRunAt":{
+      "type": "date"
+    },
+    "lastFinishedAt":{
+      "type": "date"
+    }
+  },
+  "scope": {
+    "limit": 1000
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "find",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "mixins": {
+  }
+}

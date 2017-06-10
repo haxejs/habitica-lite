@@ -1,0 +1,19 @@
+{
+  "name": "Tag",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "id":{
+      "type": "string",
+      "defaultFn":"uuidv4"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Weixin",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "unionId": {
+      "type": "string",
+      "description":"the shared global uuid for an user in weixin",
+      "required":false
+    },
+    "openIds": {
+      "type": "object",
+      "description":"{appIdA:{openId:xxxx,sessionKey:yyy}}",
+      "required":false
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

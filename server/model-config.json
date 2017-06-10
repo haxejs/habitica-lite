@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../node_modules/@mean-expert/loopback-stats-mixin/dist",
+      "../node_modules/@mean-expert/loopback-component-realtime/dist/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin"
+    ]
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "findById": true,
+          "find": true,
+          "create": true,
+          "updateAttributes": true,
+          "login": true,
+          "logout": true,
+          "wxAppLogin": true,
+          "healthPotion": true,
+          "bidVacation" :true,
+          "onVacation" :true,
+          "profile": true
+        }
+      }
+    }
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "agendaJobs": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true
+        }
+      }
+    }
+  },
+  "Task": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "createHabit":true,
+          "createDaily":true,
+          "createTodo":true,
+          "scoreUp":true,
+          "scoreDown":true,
+          "updateAttributes": true,
+          "deleteById":true,
+          "findById": true,
+          "find": true
+        }
+      }
+    }  
+  },
+  "Award": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "customCreate":true,
+          "exchange":true,
+          "updateAttributes": true,
+          "deleteById":true,
+          "findById": true,
+          "find": true
+        }
+      }
+    }
+  },
+  "Tag": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Weixin": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Growth": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Score": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Item": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Habit": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Daily": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Todo": {
+    "dataSource": "transient",
+    "public": false
+  }
+}

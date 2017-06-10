@@ -1,0 +1,50 @@
+{
+  "name": "Todo",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": false
+    },
+    "priority":{
+      "type":"number",
+      "default":1,
+      "required": false
+    },
+    "checklist": {
+      "type": ["Item"]
+    },
+    "collapseChecklist": {
+      "type": "boolean",
+      "default":false
+    },
+    "completed": {
+      "type": "boolean",
+      "default":false
+    },
+    "dateCompleted":{
+      "type": "date",
+      "required": false
+    },
+    "dueDate":{
+      "type": "date",
+      "required": true
+    },
+    "reminders":{
+      "type": ["string"],
+      "description":"date and time, format like ['2017-05-01 12:00']",
+      "default":[]
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

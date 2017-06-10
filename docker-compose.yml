@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+      habiticalite:
+        build: .
+        image: habiticalite
+        ports:
+          - "3000:3000"
+        links:
+          - mongo
+        environment:
+          - MONGODB_URL=mongodb://mongo:27017/habiticalite
+
+      mongo:
+        image: mongo
+        expose:
+          - "27017"
+

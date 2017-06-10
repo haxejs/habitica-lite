@@ -1,0 +1,52 @@
+*** job.js.orig	2017-03-23 10:14:10.000000000 +0800
+--- job.js	2017-05-04 09:34:33.000176632 +0800
+***************
+*** 106,123 ****
+    }
+  
+    function computeFromRepeatAt() {
+!     var lastRun = this.attrs.lastRunAt || new Date();
+!     var nextDate = date(repeatAt).valueOf();
+  
+!     var offset = Date.now();  // if you do not specify offset date for below test it will fail for ms
+!     if (offset === date(repeatAt,offset).valueOf()) {
+!       this.attrs.nextRunAt = undefined;
+!       this.fail('failed to calculate repeatAt time due to invalid format');
+!     } else if (nextDate.valueOf() == lastRun.valueOf()) {
+!       this.attrs.nextRunAt = date('tomorrow at ', repeatAt);
+!     } else {
+!       this.attrs.nextRunAt = date(repeatAt);
+!     }
+    }
+  };
+  
+--- 106,124 ----
+    }
+  
+    function computeFromRepeatAt() {
+!     //var lastRun = this.attrs.lastRunAt || new Date();
+!     //var nextDate = date(repeatAt).valueOf();
+  
+!     // var offset = Date.now();  // if you do not specify offset date for below test it will fail for ms
+!     // if (offset === date(repeatAt,offset).valueOf()) {
+!     //   this.attrs.nextRunAt = undefined;
+!     //   this.fail('failed to calculate repeatAt time due to invalid format');
+!     // } else if (nextDate.valueOf() == lastRun.valueOf()) {
+!     //   this.attrs.nextRunAt = date('tomorrow at ', repeatAt);
+!     // } else {
+!     //   this.attrs.nextRunAt = date(repeatAt);
+!     // }
+!     this.attrs.nextRunAt = date('tomorrow at ', repeatAt);//kshi:this should be simple like this
+    }
+  };
+  
+***************
+*** 130,135 ****
+--- 131,137 ----
+  
+  Job.prototype.repeatAt = function(time) {
+    this.attrs.repeatAt = time;
++   this.attrs.nextRunAt = date(time);//kshi:prevent run now
+    return this;
+  };
+  

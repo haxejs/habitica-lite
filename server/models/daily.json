@@ -1,0 +1,52 @@
+{
+  "name": "Daily",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": false
+    },
+    "priority":{
+      "type":"number",
+      "default":1,
+      "required": false
+    },
+    "checklist": {
+      "type": ["Item"]
+    },
+    "collapseChecklist": {
+      "type": "boolean",
+      "default":false
+    },
+    "completed": {
+      "type": "boolean",
+      "default":false
+    },
+    "streak": {
+      "type": "number"
+    },
+    "startDate":{
+      "type": "date"
+    },
+    "remindTimes":{
+      "type": ["string"],
+      "description":"time, format like ['0:00']",
+      "default":[]
+    },
+    "weekRepeat":{
+      "type": "object",
+      "default":{"1":true,"2":true,"3":true,"4":true,"5":true,"6":true,"7":true}
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Habit",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": false
+    },
+    "priority":{
+      "type":"number",
+      "default":1,
+      "required": false
+    },
+    "up": {
+      "type": "boolean",
+      "default":true
+    },
+    "down": {
+      "type": "boolean",
+      "default":true
+    },
+    "counterUp": {
+      "type": "number",
+      "default":0
+    },
+    "counterDown": {
+      "type": "number",
+      "default":0
+    },
+    "frequency":{
+      "type": "string",
+      "default":"daily"
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

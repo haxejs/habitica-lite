@@ -1,0 +1,72 @@
+{
+  "name": "Award",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": false
+    },
+    "value":{
+      "type":"number",
+      "default":10
+    },
+    "userId":{
+      "type":"string",
+      "default":"",
+      "required":false
+    }
+  },
+  "scope": {
+    "limit": 1000
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "customCreate"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "find",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "mixins": {
+    "Unset":{
+      "properties":["createdAt"]
+    },
+    "TimeStamp": {
+      "validateUpsert": true,
+      "required": false
+    }
+  }
+}

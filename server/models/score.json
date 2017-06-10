@@ -1,0 +1,28 @@
+{
+  "name": "Score",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "growth":{
+      "type": "Growth",
+      "desciption":"level,experience,health point and golden point",
+      "required": true
+    },
+    "task":{
+      "type": "Task",
+      "desciption":"the task which gets this score",
+      "required": false
+    },
+    "vacations":{
+      "type": "number",
+      "desciption":"current vacations you earned",
+      "required": false
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

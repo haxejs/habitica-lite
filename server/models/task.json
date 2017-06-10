@@ -1,0 +1,97 @@
+{
+  "name": "Task",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "strict":false,
+  "properties": {
+    "category": {
+      "type": "string",
+      "description":"unset property, options are: habit,daily or todo",
+      "required": true
+    },
+    "attribute": {
+      "type": "string",
+      "default":"str",
+      "description":"options are: str,int,per,con",
+      "required": false
+    },
+    "value":{
+      "type":"number",
+      "default":0,
+      "description":"hidden and unset property,used for delta calculation",
+      "required": false
+    },
+    "userId":{
+      "type":"string",
+      "description":"unset property",
+      "required":true
+    }
+  },
+  "scope": {
+    "limit": 1000
+  },
+  "hidden":["value"],
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "createHabit"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "createDaily"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "createTodo"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "find",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "stats",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": {
+      "validateUpsert": true,
+      "required": false
+    },
+    "Unset":{
+      "properties":["value","category","userId","createdAt","counterUp","counterDown","completed"]
+    }
+  }
+}

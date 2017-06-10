@@ -1,0 +1,12 @@
+*** FireLoop.js.orig	2017-05-19 13:58:04.122745281 +0800
+--- FireLoop.js	2017-05-19 13:59:06.039284031 +0800
+***************
+*** 24,29 ****
+--- 24,30 ----
+          FireLoop.driver = driver;
+          FireLoop.options = options;
+          FireLoop.setup();
++         return FireLoop;//kshi:return object handle
+      }
+      /**
+      * @method setup

@@ -1,0 +1,132 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "strict":true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "credentials":false,
+    "challenges":false,
+    "apiToken":{
+      "type": "string",
+      "desciption":"unset property,used for 3rd applications",
+      "required": false
+    },
+    "nickName":{
+      "type": "string",
+      "required": false
+    },
+    "avatarUrl":{
+      "type": "string",
+      "required": false
+    },
+    "gender":{
+      "type": "number",
+      "required": false
+    },
+    "country":{
+      "type": "string",
+      "required": false
+    },
+    "province":{
+      "type": "string",
+      "required": false
+    },
+    "city":{
+      "type": "string",
+      "required": false
+    },
+    "weixin":{
+      "type": "Weixin",
+      "desciption":"unset property,for weixin auth",
+      "default":{},
+      "required": false
+    },
+    "growth":{
+      "type": "Growth",
+      "desciption":"unset property, record level,experience,health point and golden point",
+      "default":{"level":1,"exp":0,"hp":50,"gp":0,"mp":10},
+      "required": false
+    },
+    "achievements":{
+      "type": "object",
+      "default":{},
+      "required": false
+    },
+    "vacations": {
+      "type": "number",
+      "default":0
+    },
+    "startVacation":{
+      "type": "boolean",
+      "default":false
+    },
+    "checkoutTime":{
+      "type": "string",
+      "default":"0:00",
+      "desciption":"checkout time for dailies",
+      "required": false
+    }
+  },
+  "scope": {
+    "limit": 1000,
+    "include":["tasks","awards"]
+  },
+  "hidden":["weixin"],
+  "validations": [],
+  "relations": {
+    "tasks": {
+      "type": "hasMany",
+      "model": "Task",
+      "foreignKey": "userId"
+    },
+    "awards": {
+      "type": "hasMany",
+      "model": "Award",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "wxAppLogin"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "profile"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "find",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "su",
+      "property": "stats",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "mixins": {
+    "Unset":{
+      "properties":["weixin","growth","apiToken","createdAt","vacations"]
+    },
+    "TimeStamp": {
+      "validateUpsert": true,
+      "required": false
+    }
+  }
+}

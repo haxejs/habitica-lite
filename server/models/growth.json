@@ -1,0 +1,54 @@
+{
+  "name": "Growth",
+  "base": "Model",
+  "strict":true,
+  "idInjection": false,
+  "properties": {
+    "level": {
+      "type": "number",
+      "default": 1,
+      "description":"level"
+    },
+    "exp": {
+      "type": "number",
+      "default": 0,
+      "description":"experience"
+    },
+    "mp": {
+      "type": "number",
+      "default": 10,
+      "description":"magic power"
+    },
+    "hp": {
+      "type": "number",
+      "default": 0,
+      "description":"health point"
+    },
+    "gp": {
+      "type": "number",
+      "default": 0,
+      "description":"golden point"
+    },
+    "str": {
+      "type": "number", 
+      "default": 0
+    },
+    "con": {
+      "type": "number", 
+      "default": 0
+    },
+    "int": {
+      "type": "number", 
+      "default": 0
+    },
+    "per": {
+      "type": "number", 
+      "default": 0
+    }
+  },
+  "hidden": ["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

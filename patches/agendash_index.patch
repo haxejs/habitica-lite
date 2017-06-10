@@ -1,0 +1,22 @@
+*** agendash_index.html.orig	2016-10-12 07:26:05.000000000 +0800
+--- agendash_index.html	2017-05-19 14:57:29.872673475 +0800
+***************
+*** 47,52 ****
+--- 47,53 ----
+                  <tr>
+                    <th>Status</th>
+                    <th>Name</th>
++                   <th>Data</th>
+                    <th>Last run started</th>
+                    <th>Next run starts</th>
+                    <th>Last finished</th>
+***************
+*** 129,134 ****
+--- 130,136 ----
+        <td>
+          <%- job.name %>
+        </td>
++       <td><%- JSON.stringify(job.data, null, 2) %></td>
+        <td><% if (job.lastRunAt) { %><time datetime="<%- moment(job.lastRunAt).toISOString() %>"><%- moment(job.lastRunAt).fromNow() %></time><% } %></td>
+        <td><% if (job.nextRunAt) { %><time datetime="<%- moment(job.nextRunAt).toISOString() %>"><%- moment(job.nextRunAt).fromNow() %></time><% } %></td>
+        <td><% if (job.lastFinishedAt) { %><time datetime="<%- moment(job.lastFinishedAt).toISOString() %>"><%- moment(job.lastFinishedAt).fromNow() %></time><% } %></td>
