@@ -17,11 +17,10 @@ So I decided to rewrite a lightweight version of it from scratch with latest tec
 
 
 ## What parts will it consist of?
-1. REST API Server (cluster) (by Strongloop) -- ongoing
-2. Mongodb (cluster)
-3. Web app (by Angular 2 or 4)
-4. Native Mobile App(iOS & Android)(by NativeScript+Angular 2 or 4)
-5. Wechat mini app
+1. REST API Server (cluster) (by Strongloop) and Mongodb (cluster) [in server folder](server/)
+2. Web app (by Angular 2 or 4)  [in client folder](client/)
+3. Native Mobile App(iOS & Android)(by NativeScript+Angular 2 or 4) -- https://github.com/haxejs/habitica-lite-mobile-app
+4. Wechat mini app -- https://github.com/haxejs/habitica-lite-wechat-mini-app
 
 ## How to set up local development environment?
 
