@@ -16,11 +16,11 @@ So I decided to rewrite a lightweight version of it from scratch with latest tec
 6. Docker, transition to DevOps
 
 
-## What parts will it consist of?
+## What parts will it consist of? (by priority)
 1. REST API Server (cluster) (by Strongloop) and Mongodb (cluster) [in server folder](server/)
-2. Web app (by Angular 2 or 4)  [in client folder](client/)
-3. Native Mobile App(iOS & Android)(by NativeScript+Angular 2 or 4) -- https://github.com/haxejs/habitica-lite-mobile-app
-4. Wechat mini app -- https://github.com/haxejs/habitica-lite-wechat-mini-app
+2. Wechat mini app -- https://github.com/haxejs/habitica-lite-wechat-mini-app
+3. Native Mobile Apps(iOS & Android)(by NativeScript+Angular 2 or 4) -- https://github.com/haxejs/habitica-lite-mobile-apps
+4. Web app (by Angular 2 or 4)  [in client folder](client/)
 
 ## How to set up local development environment?
 
