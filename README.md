@@ -1,5 +1,7 @@
-# habitica lite
+# habitica lite 
 A lightweight habit/task tracker app, inspired by HabitRPG(now habitica)
+
+* Travis CI build: [![Build status](https://secure.travis-ci.org/haxejs/habitica-lite.svg)](http://travis-ci.org/haxejs/habitica-lite)  
 
 ## Why habitica lite?
 The shortcomes of HabitRPG(habitica) are:
