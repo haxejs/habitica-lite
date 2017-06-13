@@ -17,11 +17,21 @@ So I decided to rewrite a lightweight version of it from scratch with latest tec
 
 
 ## What parts will it consist of? (by priority)
+
+### ongoing:
 1. REST API Server (cluster) (by Strongloop) and Mongodb (cluster) [in server folder](server/)
 2. Wechat mini app -- https://github.com/haxejs/habitica-lite-wechat-mini-app
+
+### pending:
 3. Native Mobile Apps(iOS & Android)(by NativeScript+Angular 2 or 4) -- https://github.com/haxejs/habitica-lite-mobile-apps
 4. Web app (by Angular 2 or 4)  [in client folder](client/)
 
 ## How to set up local development environment?
+1. install node.js(^v6.10.1),mongodb(^2.6.10), and mongodb is running at localhost:27017
+2. `git clone https://github.com/haxejs/habitica-lite`
+3. `cd habitica-lite` and run `npm install`
+4. apply a patch by `./patchesCheck.sh`
+5. start the server by `npm start`
+6. In browser, open https://localhost:3000/explorer to play the REST API
 
-## How to contribute?
+
