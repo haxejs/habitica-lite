@@ -12,7 +12,9 @@ services:
 before_install:
   - 'npm install -g npm@latest'
   
-after_install:
+install:
+  - 'npm install'
   - 'sh ./patchesCheck.sh'
+  - 'npm test'
   
-after_success: npm test
+#after_success: npm test
