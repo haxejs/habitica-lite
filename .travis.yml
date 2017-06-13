@@ -15,6 +15,6 @@ before_install:
 install:
   - 'npm install'
   - 'sh ./patchesCheck.sh'
-  - 'npm test'
-  
+
+#it seems 'npm test' will run automatically
 #after_success: npm test
