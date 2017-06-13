@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+
+node_js:
+  - "6"
+  - "7"
+  
+services:
+  - mongodb
+  - redis-server
+
+before_install:
+  - 'npm install -g npm@latest'
+  
+after_success: npm test
