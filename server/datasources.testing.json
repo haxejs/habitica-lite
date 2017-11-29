@@ -8,9 +8,5 @@
     "socketTimeoutMS": 0,
     "connectTimeoutMS": 0,
     "database": "habiticatest"
-  },
-  "transient": {
-    "name": "transient",
-    "connector": "transient"
   }
 }
