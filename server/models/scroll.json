@@ -1,0 +1,40 @@
+{
+    "name": "Scroll",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "strict": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "story": {
+            "type": "string",
+            "required": false
+        },
+        "kind": {
+            "type": "string",
+            "description": "unset property, options are: party, or challenge",
+            "required": true
+        }
+    },
+    "scope": {
+        "limit": 1000
+    },
+    "hidden": [
+    ],
+    "validations": [],
+    "relations": {
+        "tasks": {
+            "type": "hasMany",
+            "model": "Task",
+            "foreignKey": "scrollId"
+        }
+    },
+    "acls": [],
+    "methods": {},
+    "mixins": {}
+}

@@ -82,6 +82,16 @@
       "model": "Task",
       "foreignKey": "userId"
     },
+    "party": {
+      "type": "belongsTo",
+      "model": "Party",
+      "foreignKey": "partyId"
+    },
+    "challenges": {
+      "type": "hasMany",
+      "model": "Challenge",
+      "foreignKey": "userId" 
+    },
     "awards": {
       "type": "hasMany",
       "model": "Award",

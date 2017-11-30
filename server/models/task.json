@@ -40,6 +40,16 @@
       "type": "belongsTo",
       "model": "user",
       "foreignKey": "userId"
+    },
+    "parent": {
+      "type": "belongsTo",
+      "model": "Task",
+      "foreignKey": "parentId"
+    },
+    "kids": {
+      "type": "hasMany",
+      "model": "Task",
+      "foreignKey": "parentId"
     }
   },
   "acls": [

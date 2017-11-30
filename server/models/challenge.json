@@ -1,0 +1,43 @@
+{
+    "name": "Challenge",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "strict": false,
+    "properties": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "string",
+            "required": false
+        },
+        "period": {
+            "type": "number",
+            "required": false
+        },
+        "endDate":{
+            "type": "date",
+            "required": false
+        }
+    },
+    "scope": {
+        "limit": 1000
+    },
+    "hidden": [
+    ],
+    "validations": [],
+    "relations": {
+        "scroll": {
+            "type": "belongsTo",
+            "model": "Scroll",
+            "foreignKey": "scrollId"
+        }
+    },
+    "acls": [],
+    "methods": {},
+    "mixins": {}
+}

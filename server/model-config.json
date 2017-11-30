@@ -103,6 +103,18 @@
       }
     }
   },
+  "Scroll": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Party": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Challenge": {
+    "dataSource": "db",
+    "public": true
+  },
   "Tag": {
     "dataSource": "transient",
     "public": false
